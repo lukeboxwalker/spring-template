@@ -1,5 +1,5 @@
-// vue.config.js
-module.exports = {
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
     /*     proxy all webpack dev-server requests starting with /api
          to our Spring Boot backend (localhost:8088) using http-proxy-middleware
          see https://cli.vuejs.org/config/#devserver-proxy*/
@@ -16,7 +16,7 @@ module.exports = {
     pages: {
         index: {
             entry: 'src/main/vue/main.js',
-            template: 'src/main/vue/index.html',
+            template: 'index.html',
         },
     },
 
@@ -24,4 +24,4 @@ module.exports = {
          see https://cli.vuejs.org/config/*/
     outputDir: 'target/classes/public',
     assetsDir: 'static'
-};
+});
