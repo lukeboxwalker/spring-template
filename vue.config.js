@@ -11,16 +11,4 @@ module.exports = {
             }
         },
     },
-
-    pages: {
-        index: {
-            entry: 'src/main/vue/main.js',
-            template: 'index.html',
-        },
-    },
-
-    /*     Change build paths to make them Maven compatible
-         see https://cli.vuejs.org/config/*/
-    outputDir: 'target/classes/public',
-    assetsDir: 'static'
 };
