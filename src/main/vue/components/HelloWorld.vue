@@ -1,14 +1,19 @@
 <template>
     <div class="hello">
-        <h1>{{ msg }}</h1>
-        <p/>
+        <h1>Welcome to Your Vue.js App!</h1>
+        <h1>{{ backendData }}</h1>
     </div>
 </template>
 
 <script setup>
-defineProps({
-    msg: String
-})
+import {ref} from 'vue'
+import axios from 'axios'
+
+
+const backendData = ref("")
+axios.get("http://localhost:8088/api/hello-world")
+    .then(response => backendData.value = response.data)
+    .catch(e => console.log(e));
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
